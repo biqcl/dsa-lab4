@@ -16,11 +16,11 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Checkout gh-pages branch
+    - name: Checkout gh-page branch
       run: |
-        git fetch origin gh-pages
-        git checkout gh-pages
-        git pull origin gh-pages
+        git fetch origin gh-page
+        git checkout gh-page
+        git pull origin gh-page
 
     - name: Prepare version files
       run: |
@@ -87,5 +87,5 @@ jobs:
         git config user.email "actions@github.com"
         git add .
         git commit -m "Deploy version ${{ github.event.release.tag_name }}"
-        git push origin gh-pages
+        git push origin gh-page
         
